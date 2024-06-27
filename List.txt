@@ -1,0 +1,25 @@
+Langkah-langkah Implementasi LSTM dari Nol:
+1. Preprocessing Data
+Mengumpulkan Data: Dapatkan data historis saham dalam format yang cocok (misalnya CSV atau database).
+Normalisasi Data: Data perlu dinormalisasi ke rentang tertentu, misalnya antara 0 dan 1, untuk mempercepat konvergensi.
+Membagi Data: Pisahkan data menjadi data pelatihan (training) dan pengujian (testing).
+2. Membuat Struktur LSTM
+Inisialisasi Parameter: Tetapkan parameter seperti jumlah unit di setiap lapisan LSTM, jumlah lapisan, ukuran batch, dan jumlah epoch.
+Inisialisasi Bobot dan Bias: Mulai dengan bobot dan bias acak untuk semua lapisan.
+3. Forward Pass
+Input ke LSTM: Berikan input data ke sel LSTM. Setiap sel LSTM memiliki tiga jenis gerbang (input, forget, dan output) yang mengontrol aliran informasi.
+Gerbang Input: Tentukan seberapa banyak informasi baru yang akan disimpan dalam sel.
+Gerbang Forget: Tentukan informasi mana yang harus dihapus dari sel.
+Gerbang Output: Tentukan bagian dari status sel yang akan dikeluarkan sebagai output.
+Perbarui Status Sel dan Output: Perbarui status sel dan keluarkan output berdasarkan gerbang yang dihitung.
+4. Backward Pass
+Menghitung Gradien: Gunakan backpropagation through time (BPTT) untuk menghitung gradien dari loss function terhadap bobot dan bias.
+Memperbarui Bobot dan Bias: Perbarui bobot dan bias menggunakan algoritma optimasi seperti Stochastic Gradient Descent (SGD) atau Adam.
+5. Training Model
+Forward dan Backward Pass: Lakukan forward pass dan backward pass secara iteratif untuk setiap batch data.
+Menghitung Loss: Hitung loss function (misalnya Mean Squared Error) setelah setiap epoch untuk melihat performa model.
+6. Evaluasi Model
+Prediksi Data Pengujian: Gunakan model yang telah dilatih untuk memprediksi data pengujian.
+Mengukur Performa: Gunakan metrik evaluasi seperti Mean Absolute Error (MAE) atau Root Mean Squared Error (RMSE) untuk menilai akurasi prediksi.
+7. Prediksi
+Prediksi Masa Depan: Gunakan model yang dilatih untuk memprediksi harga saham di masa depan berdasarkan data input baru.
